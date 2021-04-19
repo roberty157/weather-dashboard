@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+
+main{
+    min-height:100vh;
+}
+#sidebar{
+    background-color: whitesmoke;
+    min-height: 100vh;
+}
+
+h6{
+    font-weight:normal;
+}
