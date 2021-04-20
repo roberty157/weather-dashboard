@@ -23,14 +23,21 @@
             <div class="d-flex flex-row">
                 <div class="col-3 p-1.5 pt-1 h-100" id="sidebar">
                     
-                    <form>
+                    <form id="searchForm">
                         <div class="form-group">
                             <label for="exampleInputEmail1">
                                 <h5>Search for a City</h5>
                             </label>
                             <div class="d-flex">
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
-                                <button type="submit" class="btn btn-primary">
+                                
+                                <div>
+                                  <input  type="text" class="form-control" name="searchInput" required>
+                                  <div class="invalid-tooltip">
+                                    Please choose a unique and valid username.
+                                  </div>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary" id="searchButton">
                                     <i class="fas fa-search"></i>
                                 </button>
         
@@ -40,28 +47,22 @@
                     </form>
 
                     <ul class="list-group">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                        <li class="list-group-item">Porta ac consectetur ac</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                        <li class="list-group-item">Porta ac consectetur ac</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                      </ul>
+                        
+                    </ul>
                 </div>
 
                 <div class="col-9 p-1.5 pt-3">
                     <div>
                         <div class="card" style="width: auto; ">
-                            <div class="card-body">
-                              <h2 class="card-title mb-4 mt-2">Card title</h2>
-                              <h6 class="card-subtitle mb-4 text-muted">Temperature: <span>90.9</span>&#730 F</h6>
-                              <h6 class="card-subtitle mb-4 text-muted">Humidity: <span>41%</span> </h6>
-                              <h6 class="card-subtitle mb-4 text-muted">Wind Speed: <span>4.7</span> MPH</h6>
-                              <h6 class="card-subtitle mb-4 text-muted">UV index</h6>
+                            <div class="card-body" id="currentWeather">
+                              <h2 class="card-title mb-4 mt-2">
+                                <span id="currentTitle"></span>
+                                <span id="currentIcon"></span>
+                              </h2>
+                              <h6 class="card-subtitle mb-4 text-muted">Temperature: <span id="currentTemp"></span>&#730 F</h6>
+                              <h6 class="card-subtitle mb-4 text-muted">Humidity: <span id="currentHum"></span> </h6>
+                              <h6 class="card-subtitle mb-4 text-muted">Wind Speed: <span id="currentSp"></span> MPH</h6>
+                              <h6 class="card-subtitle mb-4 text-muted">UV index: <span id="currentUV"></span></h6>
                               
                               
                             </div>
@@ -73,11 +74,12 @@
                     <div class="p-2 ">
                         <div><h4>Five Day Forecast</h4></div>
                         <div class="container text-light">
-                            <div class="row">
+                            <div class="row" id="forecast">
                               <div class="col-sm">
                                 <div class="card bg-primary">
                                     <div class="card-body">
-                                      <h5 class="card-title">8/16/2019</h5>
+                                      <h5 class="card-title"></h5>
+                                      <div></div>
                                       <h6 class="card-subtitle mb-2">Temp <span></span>&#730 F</h6>
                                       <h6 class="card-subtitle mb-2">Humidity <span></span>%</h6>
                                     </div>
@@ -86,17 +88,8 @@
                               <div class="col-sm">
                                 <div class="card bg-primary">
                                     <div class="card-body">
-                                      <h5 class="card-title">8/17/2019</h5>
-                                      <h6 class="card-subtitle mb-2">Temp <span></span>&#730 F</h6>
-                                      <h6 class="card-subtitle mb-2">Humidity <span></span>%</h6>
-                                      
-                                    </div>
-                                </div>
-                              </div>
-                              <div class="col-sm">
-                                <div class="card bg-primary">
-                                    <div class="card-body">
-                                      <h5 class="card-title">8/18/2019</h5>
+                                      <h5 class="card-title"></h5>
+                                      <div></div>
                                       <h6 class="card-subtitle mb-2">Temp <span></span>&#730 F</h6>
                                       <h6 class="card-subtitle mb-2">Humidity <span></span>%</h6>
                                       
@@ -106,7 +99,8 @@
                               <div class="col-sm">
                                 <div class="card bg-primary">
                                     <div class="card-body">
-                                      <h5 class="card-title">8/19/2019</h5>
+                                      <h5 class="card-title"></h5>
+                                      <div></div>
                                       <h6 class="card-subtitle mb-2">Temp <span></span>&#730 F</h6>
                                       <h6 class="card-subtitle mb-2">Humidity <span></span>%</h6>
                                       
@@ -116,7 +110,19 @@
                               <div class="col-sm">
                                 <div class="card bg-primary">
                                     <div class="card-body">
-                                      <h5 class="card-title">8/20/2019</h5>
+                                      <h5 class="card-title"></h5>
+                                      <div></div>
+                                      <h6 class="card-subtitle mb-2">Temp <span></span>&#730 F</h6>
+                                      <h6 class="card-subtitle mb-2">Humidity <span></span>%</h6>
+                                      
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="col-sm">
+                                <div class="card bg-primary">
+                                    <div class="card-body">
+                                      <h5 class="card-title"></h5>
+                                      <div></div>
                                       <h6 class="card-subtitle mb-2">Temp <span></span>&#730 F</h6>
                                       <h6 class="card-subtitle mb-2">Humidity <span></span>%</h6>
                                       
@@ -149,5 +155,9 @@
         
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="assets/js/script.js"></script>
+        <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+    ></script>
     </body>
 </html>
