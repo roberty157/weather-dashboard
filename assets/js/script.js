@@ -141,7 +141,7 @@ function APIcall(input){
             var iconcode = forecast[i]["weather"][0]["icon"];
             //console.log(iconcode);
             var iconEl = makeIconEl(iconcode);
-            console.log(iconEl[0].outerHTML);
+            //console.log(iconEl[0].outerHTML);
             
             forecastItem.children[1].innerHTML =iconEl[0].outerHTML;            
         }
@@ -214,11 +214,11 @@ function displayCityList(){
         cityItem.text(element);
         cityItem.on('click',function(event){
             event.preventDefault();
-            console.log(element);
+            //console.log(element);
             APIcall(element);
         })
         cityListEl.append(cityItem);
-        console.log(cityItem);
+        //console.log(cityItem);
     })
     /*
     for(var i =0;i<cityLstObj.length;i++){
