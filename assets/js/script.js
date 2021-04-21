@@ -1,7 +1,5 @@
 //open weather api
-//robert152
-//robertyeam@gmail.com
-//UCI@stapler
+
 //api: a216fc008611e9efe1fe2bdd571d9885
 
 cityListEl = $('.list-group');
@@ -77,9 +75,7 @@ function APIcall(input){
             currentTitleEl.append(errorMsg);
             
         }
-        /*
-        
-        */
+       
         //console.log("lat",lat);
         //console.log("lon",lon);
         //getWeather(lat,lon);
@@ -118,9 +114,7 @@ function APIcall(input){
         
 
         currentIconEl.append(iconEl);
-        //$('#wicon').attr('src', iconurl);
-        //var iconcode = current["weather"]["icon"];
-        //console.log(iconcode);
+        
 
         //display 5 day forecast
         forecast = forecast.slice(1,6);
@@ -220,20 +214,6 @@ function displayCityList(){
         cityListEl.append(cityItem);
         //console.log(cityItem);
     })
-    /*
-    for(var i =0;i<cityLstObj.length;i++){
-        var cityItem = $("<li>");
-        cityItem.attr("class","list-group-item");
-
-        cityItem.text(cityLstObj[i]);
-        let name = cityLstObj[i];
-        cityItem.on('click',function(event){
-            event.preventDefault();
-            console.log(name);
-        })
-        cityListEl.append(cityItem);
-        console.log(cityItem);
-    }
-    */
+ 
 }
 displayCityList();
