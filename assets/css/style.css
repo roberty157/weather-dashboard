@@ -23,3 +23,9 @@ h6{
 .list-group-item:hover{
     cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+    #forecast{
+        flex-direction:column;
+    }
+}

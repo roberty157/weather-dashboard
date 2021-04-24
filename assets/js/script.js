@@ -64,9 +64,8 @@ function APIcall(input){
             //console.log(input);
             //console.log(currentTitleEl);
             
-            //string.charAt(0).toUpperCase() + string.slice(1);
-            var titleString = input.charAt(0).toUpperCase() + input.slice(1) + ` (${moment().format("MM/DD/YYYY")})`;
-            currentTitleEl.text(titleString);
+            console.log(data);
+            
                        
         }else{
             var errorMsg = $('<div>');
@@ -90,7 +89,7 @@ function APIcall(input){
             return response.json();
         })
         .then(function(data){
-            //console.log(data);
+            console.log(data);
             displayWeather(data);
         })
 
@@ -99,6 +98,13 @@ function APIcall(input){
     function displayWeather(data){
         var current = data["current"];
         var forecast = data["daily"];
+        //display current time
+        //string.charAt(0).toUpperCase() + string.slice(1);
+        var titleString = input.charAt(0).toUpperCase() + input.slice(1) + ` (${moment.unix(current["dt"]).format("MM/DD/YYYY")})`;
+        console.log(titleString);
+        currentTitleEl.text(titleString);
+
+
         //console.log(current);
         //console.log(forecast);
         //console.log(forecast.slice(1,6));
