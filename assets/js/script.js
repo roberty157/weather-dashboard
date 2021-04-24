@@ -65,7 +65,8 @@ function APIcall(input){
             //console.log(currentTitleEl);
             
             //string.charAt(0).toUpperCase() + string.slice(1);
-            currentTitleEl.text(input.charAt(0).toUpperCase() + input.slice(1));
+            var titleString = input.charAt(0).toUpperCase() + input.slice(1) + ` (${moment().format("MM/DD/YYYY")})`;
+            currentTitleEl.text(titleString);
                        
         }else{
             var errorMsg = $('<div>');
@@ -125,6 +126,8 @@ function APIcall(input){
             var forecastItem = forecastElList[i];
             //date
             forecastItem.children[0].textContent = moment.unix(forecast[i]["dt"]).format("MM/DD/YYYY");
+
+            
             //temp
             forecastItem.children[2].children[0].textContent = forecast[i]["temp"]["day"];
             //console.log(forecastItem);
